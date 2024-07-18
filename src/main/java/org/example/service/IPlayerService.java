@@ -12,4 +12,6 @@ public interface IPlayerService {
     void save(Player player);
 
     void edit(Player player);
+
+    List<Player> findByName(String search);
 }

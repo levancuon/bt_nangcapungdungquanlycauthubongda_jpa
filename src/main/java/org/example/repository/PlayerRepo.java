@@ -63,17 +63,12 @@ public class PlayerRepo implements IPlayerRepo {
             entityManager.remove(player);
         }
     }
+    @Override
+    public List<Player> findByName(String name) {
+        List<Player> players = entityManager.createQuery("select p from Player p where p.name like :name",
+                Player.class).setParameter("name","%"+name+"%" ).getResultList();
+        return players;
+    }
 
 
 }
-// for (Player items : list) {
-//            if (items.getId() == player.getId()) {
-//                items.setName(player.getName());
-//                System.out.println(items.getName());
-//                System.out.println(player.getName());
-//                items.setDob(player.getDob());
-//                items.setExperience(player.getExperience());
-//                items.setPosition(player.getPosition());
-//            }
-//        }
-//        System.out.println("that bai");

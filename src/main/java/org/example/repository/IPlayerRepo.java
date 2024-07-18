@@ -13,4 +13,5 @@ public interface IPlayerRepo {
 
     void edit(Player player);
     void remove(int id);
+    List<Player> findByName(String name);
 }

@@ -36,4 +36,9 @@ public class PlayerService implements IPlayerService {
     public void edit(Player player) {
         playerRepo.edit(player);
     }
+
+    @Override
+    public List<Player> findByName(String search) {
+        return playerRepo.findByName(search);
+    }
 }

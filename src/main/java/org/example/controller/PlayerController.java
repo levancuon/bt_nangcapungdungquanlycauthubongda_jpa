@@ -68,6 +68,12 @@ public class PlayerController {
         playerService.edit(player);
         return "redirect:/player";
     }
+    @GetMapping("/search")
+    public String search(@RequestParam("search") String search, Model model){
+       List<Player> players = playerService.findByName(search);
+        model.addAttribute("players",players);
+        return "/list";
+    }
 
 }
 
