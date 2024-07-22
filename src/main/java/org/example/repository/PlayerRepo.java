@@ -40,20 +40,12 @@ public class PlayerRepo implements IPlayerRepo {
 
     @Override
     public void save(Player player) {
-        if (player.getId() != 0) {
-            entityManager.merge(player);
-        } else {
             entityManager.persist(player);
-        }
     }
 
     @Override
     public void edit(Player player) {
-        if (player.getId() != 0) {
             entityManager.merge(player);
-        } else {
-            entityManager.persist(player);
-        }
     }
 
     @Override
